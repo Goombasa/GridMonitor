@@ -1,5 +1,3 @@
-package edu.boisestate.matthewchristens.gridmonitor;
-
 import java.io.FileNotFoundException;
 
 /**
@@ -16,14 +14,6 @@ public class GridMonitorTest {
 	/** @param args not used */
 	public static void main(String[] args) {
 		GridMonitorTest tester = new GridMonitorTest(); //to avoid every method being static
-//		try {
-//			GridMonitor monitor = new GridMonitor("sample.txt");
-//			tester.print2DArray(monitor.getBaseGrid());
-//			System.out.println();
-//			tester.print2DArray(monitor.getSurroundingSumGrid());
-//		} catch (FileNotFoundException ex) {
-//			ex.printStackTrace();
-//		}
 		tester.runTests();
 	}
 	

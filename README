@@ -1,0 +1,78 @@
+****************
+* Warmup
+* CS 221
+* 1/21/2020
+* Matthew Christensen
+****************
+
+OVERVIEW:
+
+ This program takes an input file representation of a
+ grid of cells. It then takes the values and determines
+ which ones are in danger of exploding.
+
+
+INCLUDED FILES:
+
+ * GridMonitorInterface.java - source file
+ * GridMonitor.java - source file
+ * GridMonitorTest.java - driver file
+ * sample.txt, sampleDoubles.txt, etc. - input files for running tests
+ * README - this file
+
+
+COMPILING AND RUNNING:
+
+ From the directory containing all source files, compile the
+ driver class (and all dependencies) with the command:
+ $ javac GridMonitorTest.java
+
+ Run the compiled class file with the command:
+ $ java GridMonitorTest
+
+ Console output will give the results after the program finishes.
+
+
+PROGRAM DESIGN AND IMPORTANT CONCEPTS:
+
+ The GridMonitorInterface class is simply used to create the structure
+ for the GridMonitor class, defining all of the getters/accessors that
+ will be required.
+
+ The GridMonitor class implements the GridMonitorInterface class, and
+ provides the implementation for all methods defined in the interface.
+ The main constructor for GridMonitor accepts one input, which is the
+ file name for the file representation of the grid's current state.
+ The constructor will take the file, read the state of the grid, and
+ save it to a two dimensional grid of values. It then uses that two
+ dimensional grid to calculate which cells are at risk. All calculated
+ grids are saved in their respective variables.
+
+ The main thing that could be improved would be to pass a file object to
+ the constructor, or to pass a directory and file name, or just better
+ methods of finding where the grid representation file is, rather than
+ just leaving it as a sibling file to the classes themselves.
+
+
+TESTING:
+
+ To test the program, I ran all of the tests contained within the sample
+ files and from the GridMonitorTest class. All of the sample files and
+ provided tests succeeded without issue. If my program receives a bad
+ input, it will print the stack trace that led to the issue, then stop
+ reading the file. This should prevent any errors. There are no bugs or
+ issues that are known.
+
+
+DISCUSSION:
+
+ The main issues I ran into during programming is that I had a lot of
+ issues with trying to get the scanner to read the sample files. I
+ originally put the classes into a package, and had the sample files as
+ sibling files, but ran into too many issues. I eventually gave up and
+ put the sample files as top level in my project and took the classes out
+ of the package. After that, I got the files to read, and I just ran into
+ issues with getting the files to actually read properly. I eventually
+ found out that it wasn't getting the coordinates correctly and it
+ "clicked" that I should just use the Scanner.next() method rather
+ than Scanner.nextLine()

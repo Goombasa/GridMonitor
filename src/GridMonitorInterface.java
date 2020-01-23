@@ -1,5 +1,3 @@
-package edu.boisestate.matthewchristens.gridmonitor;
-
 /**
  * Interface required for a class that can read in a two-dimensional array of doubles
  * (the base grid) and determine locations in the base grid with dangerous values

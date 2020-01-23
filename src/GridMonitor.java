@@ -1,5 +1,3 @@
-package edu.boisestate.matthewchristens.gridmonitor;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.nio.file.Paths;
@@ -128,7 +126,9 @@ public class GridMonitor implements GridMonitorInterface {
                 deltaGrid[y][x] = Math.abs(sum/8);
 
                 //determine if the cell is in danger and save the truth value to dangerGrid[y][x]
-                dangerGrid[y][x] = baseGrid[y][x] < surroundingAvgGrid[y][x] - deltaGrid[y][x] || baseGrid[y][x] > surroundingAvgGrid[y][x] + deltaGrid[y][x];
+                dangerGrid[y][x] =
+                        baseGrid[y][x] < surroundingAvgGrid[y][x] - deltaGrid[y][x] ||
+                                baseGrid[y][x] > surroundingAvgGrid[y][x] + deltaGrid[y][x];
             }
         }
 
@@ -202,5 +202,17 @@ public class GridMonitor implements GridMonitorInterface {
 
         //return the copied array
         return toReturn;
+    }
+
+    /**
+     * returns a string representation of the grid
+     *
+     * @return a string representation of the grid
+     */
+    @Override
+    public String toString() {
+        StringBuilder output = new StringBuilder();
+
+        return getBaseGrid().toString();
     }
 }
